@@ -3,15 +3,22 @@ import { ListColumnData } from '../../../UIKit/CustomList/CustomListTypes';
 import CustomList from '../../../UIKit/CustomList/CustomList';
 import { TouItem } from './TouTabTypes';
 import Scripts from '../../shared/utils/clientScripts';
+import { redirectSPA } from '../../shared/utils/utils';
 
 interface TouTabProps {
 }
 
 /** Вкладка Контактные лица */
 function TouTab() {
+	const clickTouHandler = (data) => {
+		const link = Scripts.getTouLink(data);
+
+		redirectSPA(link);
+	}
+
 	/** Колонки списка */
 	const columns = [
-		new ListColumnData({ name: "Наименование", code: "name", fr: 1, isSortable: true }),
+		new ListColumnData({ name: "Наименование", code: "name", fr: 1, isSortable: true, isLink: true, onClick: clickTouHandler }),
 		new ListColumnData({ name: "Вид медицинской помощи", code: "risk", fr: 1, isSortable: true }),
 		new ListColumnData({ name: "Уровень ТОУ", code: "level", fr: 1, isSortable: true }),
 		new ListColumnData({ name: "Возрастная категория", code: "age", fr: 1, isSortable: true }),

@@ -3,11 +3,11 @@ import { ItemData, ItemDataString } from '../../../UIKit/CustomList/CustomListTy
 /** Элемент списка ТОУ */
 export interface TouItem {
 	/** Наименование */
-	name: ItemDataString
+	name: ItemData<string>
 	/** Вид медицинской помощи */
-	risk: ItemData
+	risk: ItemData<string>
 	/** Уровень ТОУ */
-	level: ItemData
+	level: ItemData<string>
 	/** Возрастная категория */
 	age: ItemDataString
 }

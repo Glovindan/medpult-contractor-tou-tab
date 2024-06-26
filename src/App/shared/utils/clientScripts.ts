@@ -70,15 +70,15 @@ function randomDelay() {
 // 	}
 // }
 
-/** Получение контактных лиц */
+/** Получение ТОУ */
 async function getTou(): Promise<FetchData<TouItem>> {
 	await randomDelay()
 	const items: FetchItem<TouItem>[] = [
 		{
 			id: 'test',
 			data: {
-				age: new ItemDataString('sfsaf'),
-				name: new ItemDataString('sfsaf'),
+				age: new ItemDataString('afasfasfasfasf'),
+				name: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				risk: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				level: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 			},
@@ -87,7 +87,7 @@ async function getTou(): Promise<FetchData<TouItem>> {
 			id: 'test',
 			data: {
 				age: new ItemDataString('sfsaf'),
-				name: new ItemDataString('sfsaf'),
+				name: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				risk: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				level: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 			},
@@ -96,7 +96,7 @@ async function getTou(): Promise<FetchData<TouItem>> {
 			id: 'test',
 			data: {
 				age: new ItemDataString('sfsaf'),
-				name: new ItemDataString('sfsaf'),
+				name: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				risk: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				level: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 			},
@@ -105,7 +105,7 @@ async function getTou(): Promise<FetchData<TouItem>> {
 			id: 'test',
 			data: {
 				age: new ItemDataString('sfsaf'),
-				name: new ItemDataString('sfsaf'),
+				name: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				risk: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 				level: new ItemData({ value: 'sfsaf', info: 'sfsaf' }),
 			},
@@ -118,4 +118,10 @@ async function getTou(): Promise<FetchData<TouItem>> {
 	}
 }
 
-export default { getTou }
+/** Получение ссылки на элемент ТОУ в ЛПУ */
+function getTouLink(data: ItemData): string {
+	console.log(data)
+	return '#test'
+}
+
+export default { getTou, getTouLink }
